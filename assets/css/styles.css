@@ -1,0 +1,338 @@
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #2ecc71;
+    --secondary-dark: #27ae60;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark);
+    line-height: 1.0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    padding: 10px 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    max-width: 400px;
+    margin: 0 auto 40px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--dark);
+    font-size: 1.8rem;
+}
+
+.form-group {
+    flex: 1; /* make both groups equal width */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Form Row for Side-by-Side Fields */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input {
+    margin-right: 8px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    padding: 20px 0;
+}
+
+.welcome-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.welcome-card h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-item {
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 4px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.footer-links li {
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    margin-top: 10px;
+    color: var(--gray);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* === Added styling for specific field pairs === */
+
+/* Make specific pairs side by side */
+.form-row.firstname-lastname,
+.form-row.password-confirm,
+.form-row.gender-dob {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-row.firstname-lastname .form-group,
+.form-row.password-confirm .form-group,
+.form-row.gender-dob .form-group {
+    flex: 1;
+}

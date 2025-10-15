@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <img src="assets/img/logo.png" alt="Abyssinia Tech Center" width="150" height="120">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.php">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Student Registration System</h1>
+            <p>Join Abyssinia Tech Center and access a world of learning opportunities. Register now to get started!</p>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Create Student Account</h2>
+            <form id="registrationForm" action="register.php" method="POST">
+                
+                <!-- First Name & Last Name -->
+                <div class="form-row firstname-lastname">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <!-- Password & Confirm Password -->
+                <div class="form-row password-confirm">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Gender & Date of Birth -->
+                <div class="form-row gender-dob">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" class="form-control" required>
+                            <option value="" disabled selected>Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Register Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Register</button>
+                </div>
+
+                <!-- Footer Link -->
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo" style="color: white; margin-bottom: 20px;">StudentPortal</a>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+                <p class="copyright">&copy; 2025 Abyssinia Tech Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value; // ✅ Fixed ID reference
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                return false;
+            }
+
+            if (password.length < 6) {
+                e.preventDefault();
+                alert('Password must be at least 6 characters long!');
+                return false;
+            }
+
+            // If validation passes, form submits to register.php
+        });
+    </script>
+</body>
+</html>
